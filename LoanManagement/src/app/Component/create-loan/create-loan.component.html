@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="create-loan.component.css" >
+</head>
+<body>
+    <h2 style="text-align: center; color:black"> <u>Create New Loan</u></h2>
+  <div class="content">
+    <form   [formGroup]="registerForm"  (ngSubmit)="onSubmit()">
+      <div class="form-group">  
+        <label for="fastname" class="form-label">FirstName</label>
+        <input type="text" [(ngModel)]="loan.firstname" 
+        class="form-control"  formControlName="fastname"     id="fastname" name="fastname">
+      </div>
+      <div class="form-text text-danger" *ngIf="FastName.errors?.['required'] && (FastName.touched || FastName.dirty) " >
+          Fast Name is required. 
+      </div>
+      <div class="form-text text-danger" *ngIf="FastName.errors?.['minlength'] && (FastName.touched || FastName.dirty)" >
+        Fast Name is too short. 
+    </div>
+    <div class="form-text text-danger" *ngIf="FastName.errors?.['pattern'] && (FastName.touched || FastName.dirty)" >
+        Fast Name starts with an alphabet. 
+    </div>
+
+
+
+
+        <div class="form-group">
+          <label for="lastname" class="form-label">LastName</label>
+          <input type="text"   [(ngModel)]="loan.lastname"  class="form-control" formControlName="lastname"  id="lastname" name="lastname" >
+       </div>
+       <div class="form-text text-danger" *ngIf="LastName.errors?.['required'] && (LastName.touched || LastName.dirty) " >
+        Last Name is required. 
+    </div>
+    <div class="form-text text-danger" *ngIf="LastName.errors?.['minlength'] && (LastName.touched || LastName.dirty)" >
+      Last Name is too short. 
+  </div>
+  <div class="form-text text-danger" *ngIf="LastName.errors?.['pattern'] && (LastName.touched || LastName.dirty)" >
+      Last Name starts with an alphabet. 
+  </div>
+  
+
+        <div class="form-group">
+          <label for="loanNo" class="form-label">Loan No</label>
+          <input type="text" [(ngModel)]="loan.loanno"  class="form-control" formControlName="loanNo"   id="loanNo" name="loanNo">
+        </div>
+     <div class="form-text text-danger" *ngIf="LoanNo.errors?.['required'] && (LoanNo.touched || LoanNo.dirty)" >
+        Loan No is required. 
+    </div>
+    <div class="form-text text-danger" *ngIf="LoanNo.errors?.['pattern'] && (LoanNo.touched || LoanNo.dirty)" >
+        Loan No is number. 
+    </div>
+    <div class="form-text text-danger" *ngIf="LoanNo.errors?.['minlength'] && (LoanNo.touched || LoanNo.dirty)" >
+        Loan No is too short. 
+    </div>
+    <div class="form-text text-danger" *ngIf="LoanNo.errors?.['maxlength'] && (LoanNo.touched || LoanNo.dirty)" >
+        Loan No is large. 
+    </div>
+
+        <div class="form-group">
+            <label for="loan_amount" class="form-label">Property Addres</label>
+            <input type="text" [(ngModel)]="loan.property_add"class="form-control"  formControlName="property_add" id="property_add" name="property_add">
+          </div>
+          <div class="form-text text-danger" *ngIf="PropertyAdd.errors?.['required'] && (PropertyAdd.touched || PropertyAdd.dirty) " >
+            Property address is required. 
+        </div>
+        <div class="form-text text-danger" *ngIf="PropertyAdd.errors?.['minlength'] && (PropertyAdd.touched || PropertyAdd.dirty)" >
+            Property address  is too short. 
+      </div>
+      <div class="form-text text-danger" *ngIf="PropertyAdd.errors?.['pattern'] && (PropertyAdd.touched || PropertyAdd.dirty)" >
+        Property address  starts with an alphabet. 
+      </div>
+
+          <div class="form-group">
+            <label for="author" class="form-label">Loan Amount</label>
+            <input type="text"  [(ngModel)]="loan.loan_amount"class="form-control" formControlName="loan_amount"  id="loan_amount" name="loan_amount">
+          </div>
+          <div class="form-text text-danger" *ngIf="LoanAmount.errors?.['required'] && (LoanAmount.touched || LoanAmount.dirty)" >
+            Loan Amount is required. 
+        </div>
+        <div class="form-text text-danger" *ngIf="LoanAmount.errors?.['pattern'] && (LoanAmount.touched || LoanAmount.dirty)" >
+            Loan Amount is a number.
+        </div>
+        <div class="form-text text-danger" *ngIf="LoanAmount.errors?.['minlength'] && (LoanAmount.touched || LoanAmount.dirty) " >
+            Amount is short.
+        </div>
+        <div class="form-text text-danger" *ngIf="LoanAmount.errors?.['maxlength'] && (LoanAmount.touched || LoanAmount.dirty)" >
+            Amount is long.
+        </div>
+         
+          
+          <div class="form-group">
+            <label for="loan_type" class="form-label">Loan Type</label>
+          
+            <input type="text" [(ngModel)]="loan.loan_type"class="form-control"  formControlName="loan_type" id="loan_type"  name="loan_type"> 
+          </div>
+          <div class="form-text text-danger" *ngIf="LoanType.errors?.['required'] && (LoanType.touched || LoanType.dirty)" >
+            Loan Type is required. 
+        </div>
+        <div class="form-text text-danger" *ngIf="LoanType.errors?.['pattern'] && (LoanType.touched || LoanType.dirty)" >
+            Loan Type is an alphabet. 
+        </div>
+
+
+          <div class="form-group">
+            <label for="loan_term" class="form-label">Loan Term</label>
+            <input type="text" [(ngModel)]="loan.loan_term"class="form-control"  formControlName="loan_term"  id="loan_term" name="loan_term">
+          </div>
+          <div class="form-text text-danger" *ngIf="LoanTerm.errors?.['required'] && (LoanTerm.touched || LoanTerm.dirty)" >
+            Loan Term is required. 
+        </div>
+        <div class="form-text text-danger" *ngIf="LoanTerm.errors?.['pattern'] && (LoanTerm.touched || LoanTerm.dirty)" >
+            Loan Term is a number.
+        </div>
+        <div class="form-text text-danger" *ngIf="LoanTerm.errors?.['minlength'] && (LoanTerm.touched || LoanTerm.dirty) " >
+            Term is short.
+        </div>
+        <div class="form-text text-danger" *ngIf="LoanTerm.errors?.['maxlength'] && (LoanTerm.touched || LoanTerm.dirty)" >
+            Term is long.
+        </div>
+     
+         
+         
+       <div class="form-group">
+        <button type="submit" [disabled]="registerForm.invalid"class="btn btn-primary" style="margin-top: 20px;">Submit</button>
+      </div>
+      </form>
+      </div>
+</body>
+</html>
+
+
+
+
+   

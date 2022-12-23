@@ -1,0 +1,39 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     <link rel="stylesheet" href="login.component.css">
+ </head>
+
+
+ <body>
+    <h2 style="text-align: center; color:black"> <u>Log in</u></h2>
+    <div class="content">
+        <div class="card" style="padding: 20px;">
+            <form (ngSubmit)="onSubmit()">
+                <div class="mb-3">
+                    <label for="username" class="form-label">Email:</label>
+                    <input type="text" class="form-control" id="email" [(ngModel)]="user.email" name="email"placeholder="enter your user name">
+                  </div>
+                  <div class="mb-3">
+                    <label for="password" class="form-label">Password:</label>
+                    <input type="text" class="form-control" id="password"  [(ngModel)]="user.password"  name="password" placeholder="enter your password">
+                  </div>
+                  <div class="mb-3">
+                
+                    <input type="submit" class="form-control"  value="LogIn">
+                  </div>
+    
+            </form>
+        </div>
+    </div>
+    
+     
+ </body>
+ </html>
+ 
+ 
+ 

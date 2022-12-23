@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="user-sign-up.component.css">
+</head>
+<body>
+  <div class="content">
+    <form (ngSubmit)="onSubmit()">
+  <label for="username" class="form-label">User Name</label>
+<input type="text" id="username" class="form-control"  name="username" [(ngModel)]="user.username">
+
+
+<label for="password" class="form-label">Password</label>
+<input type="password" id="password" class="form-control"  name="password" [(ngModel)]="user.password" >
+
+<label for="password" class="form-label">Email</label>
+<input type="text" id="email" class="form-control"  name="email" [(ngModel)]="user.email" >
+
+<button type="submit" class="btn btn-outline-primary" style="margin-top: 20px; margin-left: 40px; background-color: azure;color:black"
+>Submit</button>
+</form>
+
+</div>
+</body>
+</html>

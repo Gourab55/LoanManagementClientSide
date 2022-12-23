@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .allcontent {
+        background-color: azure;
+        width: 500px;
+        padding: 50px;
+        margin: 50px auto;
+        box-shadow: 0 0 7px 2px rgba(0, 0, 0, 4);
+    }
+</style>
+
+<body>
+
+
+
+    <div class="allcontent">
+   
+    <form (ngSubmit)="onSubmit()">
+        <h3 style="text-align:center;">Search Loans</h3>
+
+        <div class="content1" style="margin-bottom: 20px;margin-top: 20px;">
+            <div class="row g-3 align-items-center">
+                <div class="col-auto">
+                    <label for="fastname" class="col-form-label">FirstName</label>
+                </div>
+                <div class="col-auto" style="margin-left: 28px;">
+                    <input type="text" id="fastname" class="form-control" [(ngModel)]="loan.firstname"     
+                    name="firstname" placeholder="Enter fast  name"   />
+                </div>
+            </div>
+
+        </div>
+        <div class="content1" style="margin-bottom: 20px;">
+            <div class="row g-3 align-items-center">
+                <div class="col-auto">
+                    <label for="lastname" class="col-form-label">Last Name</label>
+                </div>
+                <div class="col-auto" style="margin-left: 30px;">
+                    <input type="text" id="lastname" class="form-control" [(ngModel)]="loan.lastname" 
+                    placeholder="Enter last name" name="lastname" value="">
+                </div>
+            </div>
+     </div>
+        
+        <div class="content1" style="margin-bottom: 20px;">
+            <div class="row g-3 align-items-center">
+                <div class="col-auto">
+                    <label for="loanno" class="col-form-label">LoanNo</label>
+                </div>
+                <div class="col-auto" style="margin-left: 47px;">
+                    <input type="number" id="loanno" class="form-control" [(ngModel)]="loan.loanno"
+                    placeholder="Enter loan No" name="loanno" value="0">
+                </div>
+            </div>
+
+        </div>
+       
+        
+        <input class="btn btn-outline-primary" type="submit" style="margin-left: 150px; margin-top: 20px;"
+                    value="Search">
+    </form>
+  
+    </div>
+
+    <script>
+        document.getElementsByName("fastname").defaultValue="";
+        document.getElementsByName("lastname").defaultValue="";
+    </script>
+
+    <div class="container">
+        <h2>Loan List</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>FirsttName</th>
+                    <th>LastName</th>
+                    <th>LoanNo</th>
+                    <th>Property Address</th>
+                    <th>Loan Amount</th>
+                    <th>Loan Type</th>
+                    <th>Loan Term</th>
+                 
+                
+        
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let b of loans">
+                    <td>{{b.firstname}}</td>
+                    <td>{{b.lastname}}</td>
+                    <td>{{b.loanno}}</td>
+                    <td>{{b.property_add}}</td>
+                    <td>{{b.loan_amount}}</td>
+                    <td>{{b.loan_type}}</td>
+                    <td>{{b.loan_term}}</td>
+        
+        
+                </tr>
+            </tbody>
+        
+        </table>
+        </div>
+
+</body>
+
+</html>

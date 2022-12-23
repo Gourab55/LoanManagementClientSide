@@ -1,0 +1,41 @@
+<div class="container">
+    <h2>Loan List</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>LoanNo</th>
+                <th>Property Address</th>
+                <th>Loan Amount</th>
+                <th>Loan Type</th>
+                <th>Loan Term</th>
+                <th>Action</th>
+               
+            
+    
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let b of loans">
+                <td>{{b.firstname}}</td>
+                <td>{{b.lastname}}</td>
+                <td>{{b.loanno}}</td>
+                <td>{{b.property_add}}</td>
+                <td>{{b.loan_amount}}</td>
+                <td>{{b.loan_type}}</td>
+                <td>{{b.loan_term}}</td>
+               
+                
+                <td>
+                    <button (click)="updateLoan(b.id)" class="btn btn-primary">Update</button>
+                    <button (click)="deleteLoan(b.id)" class="btn btn-danger" style="margin-left:10px">Delete</button>
+
+                </td>
+    
+    
+            </tr>
+        </tbody>
+    
+    </table>
+    </div>

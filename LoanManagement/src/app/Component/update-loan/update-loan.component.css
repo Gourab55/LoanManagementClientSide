@@ -1,0 +1,8 @@
+.content{
+    background: darkgray;
+    width: 600px;
+    padding: 50px;
+    margin: 50px auto;
+    box-shadow:  0 0 7px 5px(0,0,0,0.6) ;
+
+}

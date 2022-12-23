@@ -1,0 +1,9 @@
+
+.content{
+ 
+    background: cornflowerblue;
+    width: 400px;
+    padding: 50px;
+    margin: 50px auto;
+    box-shadow: 0 0 7px 4px rgba(0,0,0,0.3);
+}
